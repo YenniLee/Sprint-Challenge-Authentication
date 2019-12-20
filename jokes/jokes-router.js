@@ -1,10 +1,10 @@
 const axios = require('axios');
-const restricted = require('../auth/authenticate-middleware.js');
+const authenticate = require('../auth/authenticate-middleware.js');
 
 const router = require('express').Router();
 
 // '/api/jokes/'
-router.get('/', restricted, (req, res) => {
+router.get('/', authenticate, (req, res) => {
   const requestOptions = {
     headers: { accept: 'application/json' },
   };
